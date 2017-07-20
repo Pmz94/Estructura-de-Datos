@@ -1,6 +1,6 @@
 Estructura de Datos escritos en lenguaje C.
 
-Estos codigos se corren en consolas de cualquier sistema operativo y el compilador TCC.
+Estos codigos se corren en consolas de cualquier sistema operativo compatible para el compilador TCC.
 
 Para correr los programas abra la consola, localice la carpeta del compilador y corra los sig. comandos:
 
