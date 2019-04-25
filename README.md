@@ -22,7 +22,7 @@ Luego corra los sig. comandos:
 
 ### Para Linux
 
-En este ejemplo usare un compilador GNU C/C++ con otras herramientas relacionadas que ya vienene en Linux.
+En este ejemplo usare un compilador GNU C/C++ con otras herramientas relacionadas que ya vienen en Linux.
 
 Para instalar todo esto escriba en la terminal:
 
