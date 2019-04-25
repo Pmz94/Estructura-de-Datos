@@ -1,9 +1,7 @@
-/*Autor Pedro Muñoz
-Fecha 19 de Octubre de 2015
-*/
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+/* Pedro Muñoz - 19/Octubre/2015 */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #define YAEXISTE 2
 
 typedef struct linked_list{

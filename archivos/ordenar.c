@@ -1,8 +1,6 @@
-/* Autor Pedro Munoz
-Fecha 31 de Agosto de 2015
-*/
-#include<stdio.h>
-#include<string.h>
+/* Pedro Munoz - 31/Agosto/2015 */
+#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 typedef struct elementos{
@@ -34,15 +32,15 @@ Nodo* insertar_argumentos(int size, char **array){
 	head = nuevo_nodo(); //crear espacio en la memoria, recibimos nombres y calif al mismo campo
 	ptr = head; //dos variables que apuntan a la misma ubicacion
 	
-		for(int i=1; i<size; i++){
-			ptr->valor=atoi(array[i]);
+	for(int i = 1; i < size; i++) {
+		ptr->valor = atoi(array[i]);
 			
-			if(!(i==size-1)){
-				ptr->sig=nuevo_nodo();
-				ptr=ptr->sig;
-			}
+		if(!(i == size - 1)) {
+			ptr->sig = nuevo_nodo();
+			ptr = ptr->sig;
 		}
-		return head;
+	}
+	return head;
 }
 
 void display(Nodo * head){

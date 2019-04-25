@@ -17,8 +17,7 @@ QUEUE * createQueue(void);
 NODO * nuevo_nodo( void );
 
 /* =============== QUEUE ============ */
-NODO * nuevo_nodo( void )
-{
+NODO * nuevo_nodo( void ) {
     struct elemento *p;
     
     p = (NODO *) malloc( sizeof( NODO ) );
@@ -30,7 +29,7 @@ NODO * nuevo_nodo( void )
 
 }
 
-void put (QUEUE *cola, int valor) {
+void put(QUEUE *cola, int valor) {
 
     NODO* n = nuevo_nodo();
     n->valor = valor;
@@ -44,7 +43,7 @@ void put (QUEUE *cola, int valor) {
     cola->size++;
 }
 
-int get (QUEUE* cola) {
+int get(QUEUE* cola) {
     // toma el primer nodo
     NODO* head = cola->head;
     int valor = head->valor;
@@ -60,16 +59,15 @@ int get (QUEUE* cola) {
 void display_queue(QUEUE* cola) {
     printf("\nDisplay: ");
     // no item
-    if (cola->size == 0)
+    if(cola->size == 0)
         printf("La cola esta vacia.\n");
     else { // has item(s)
         NODO* head = cola->head;
         int i; 
         int size = cola->size;
         printf("%d nodo(s):\n", cola->size);
-        for (i = 0; i < size; i++) {
-            if (i > 0)
-                printf(", ");
+        for(i = 0; i < size; i++) {
+            if(i > 0) printf(", ");
             printf("%d", head->valor);
             head = head->sig;
         }
@@ -77,10 +75,10 @@ void display_queue(QUEUE* cola) {
     printf("\n");
 }
 
-QUEUE * createQueue () {
+QUEUE * createQueue() {
     QUEUE *queue;
     
-    queue = (QUEUE *) malloc( sizeof(QUEUE) );
+    queue = (QUEUE *) malloc(sizeof(QUEUE));
     queue->size = 0;
     queue->head = NULL;
     queue->tail = NULL;

@@ -1,13 +1,41 @@
-Estructura de Datos escritos en lenguaje C.
+# Estructura de Datos escritos en lenguaje C.
 
-Estos codigos se corren en consolas de cualquier sistema operativo compatible para el compilador TCC.
+Estos codigos se corren en consola, necesitaras un compilador.
 
-Para correr los programas abra la consola, localice la carpeta del compilador y corra los sig. comandos:
+### Para Windows
 
-">cd C:\User\Documents\TCC"
+En este ejemplo usare el TCC (portable).
 
-">tcc -o [solo el nombre del archivo] [nombre del archivo .c con todo y formato]"
+Guarde los archivos dentro de la carpeta del compilador.
 
-">tcc [nombre del archivo .c con todo y formato]"
+Para correr los programas abra la consola, vaya a la carpeta del compilador:
 
-">[nombre del archivo .exe con todo y formato]"
+```> cd C:/User/Documents/TCC```
+
+Luego corra los sig. comandos:
+
+```> tcc -o archivo archivo.c```
+
+```> tcc archivo.c```
+
+```> archivo.exe```
+
+### Para Linux
+
+En este ejemplo usare un compilador GNU C/C++ con otras herramientas relacionadas que ya vienene en Linux.
+
+Para instalar todo esto escriba en la terminal:
+
+```$ sudo apt update```
+
+```$ sudo apt install build-essential manpages-dev```
+
+Ya que tenga lo anterior, vaya a la carpeta donde tenga los archivos:
+
+```$ cd /home/user/estructura-de-datos/```
+
+Luego corra los sig. comandos:
+
+```$ cc archivos/archivo.c -o ejecutables/archivo```
+
+```$ ./ejecutables/archivo```
