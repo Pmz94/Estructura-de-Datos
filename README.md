@@ -8,7 +8,7 @@ En este ejemplo usare el TCC (portable).
 
 Guarde los archivos dentro de la carpeta del compilador.
 
-Para correr los programas abra la consola, vaya a la carpeta del compilador:
+Para correr los programas abra la consola y vaya a la carpeta del compilador:
 
 ```> cd C:/User/Documents/TCC```
 
