@@ -10,33 +10,31 @@ typedef struct Queue {
     int   size;
 } QUEUE;
 
-void put (QUEUE *cola, int valor);
-int get (QUEUE *cola);
-void display_queue (QUEUE *cola);
+void put(QUEUE *cola, int valor);
+int get(QUEUE *cola);
+void display_queue(QUEUE *cola);
 QUEUE * createQueue(void);
-NODO * nuevo_nodo( void );
+NODO * nuevo_nodo(void);
 
 /* =============== QUEUE ============ */
-NODO * nuevo_nodo( void ) {
+NODO * nuevo_nodo(void) {
     struct elemento *p;
     
-    p = (NODO *) malloc( sizeof( NODO ) );
+    p = (NODO *) malloc(sizeof(NODO));
     
-    p->valor= 0;
+    p->valor = 0;
     p->sig = NULL;
     
     return p;
-
 }
 
 void put(QUEUE *cola, int valor) {
-
     NODO* n = nuevo_nodo();
     n->valor = valor;
 
-    if (cola->head == NULL) { // si la cola esta vacia
+    if(cola->head == NULL) { // si la cola esta vacia
         cola->head = n;
-    } else{
+    } else {
         cola->tail->sig = n;
     }
     cola->tail = n;

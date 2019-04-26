@@ -1,10 +1,10 @@
-/* Pedro Munoz - 19/Agosto/2015 */
+/* apuntadores.c - Pedro Munoz - 19/Agosto/2015 */
 #include <stdio.h> //standard input/output
 
 void f(int *a, int *b);
 void set_x_and_y(int *x, int *y);
 
-int main (int argc, char **argv) {
+int main(int argc, char **argv) {
 	int a_inicial = 10;
 	int b_inicial = 20;
 	printf("a: %d\nb:%d\n", a_inicial, b_inicial);

@@ -1,25 +1,25 @@
-typedef struct elemento{
+typedef struct elemento {
     int valor;
     struct elemento *sig; /* siguiente nodo */
-}NODO;
+} NODO;
 
-NODO * nuevo_nodo( void ){
+NODO * nuevo_nodo(void) {
     struct elemento *p;
-    p = (NODO *) malloc( sizeof( NODO ) );
-    p->valor= 0;
+    p = (NODO *) malloc(sizeof(NODO));
+    p->valor = 0;
     p->sig = NULL;
     return p;
 }
 
-void push(NODO **head, int valor){
+void push(NODO **head, int valor) {
     NODO *nodo;
     nodo = nuevo_nodo();
-    if(*head == NULL){
+    if(*head == NULL) {
         nodo->valor = valor;
-        nodo->sig   = NULL;
+        nodo->sig = NULL;
         //printf(">>>nodo:%u valor:%d sig:%u\n",nodo, nodo->valor, nodo->sig);
         *head = nodo;
-    }else{
+    } else {
         nodo->valor = valor;
         nodo->sig = *head;
         *head = nodo;
@@ -27,9 +27,9 @@ void push(NODO **head, int valor){
     }
 }
 
-int pop(NODO **head){
-    int valor=-1;
-    if (head!= NULL){
+int pop(NODO **head) {
+    int valor = -1;
+    if(head != NULL) {
         NODO *tmp;
         tmp = *head;
         valor = tmp->valor;
@@ -39,9 +39,9 @@ int pop(NODO **head){
     return(valor);
 }
 
-void display_stack( NODO *p ){
-    while ( p !=NULL ){
-        printf("valor:%d \n",p->valor);
+void display_stack(NODO *p) {
+    while(p != NULL) {
+        printf("valor:%d \n", p->valor);
         p = p->sig;
     }
 }

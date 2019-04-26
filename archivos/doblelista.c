@@ -1,22 +1,20 @@
-/* Autor Pedro Muñoz
-Fecha: 28 de Septiembre de 2015
-*/
-#include<stdio.h>
-#include<stdlib.h>
+/* doblelista.c - Pedro Muñoz - 28/Septiembre/2015 */
+#include <stdio.h>
+#include <stdlib.h>
 #define HEAD 0
 #define TAIL 1
 
-typedef struct elemento{
+typedef struct elemento {
 	int valor;
 	struct elemento * ant;
 	struct elemento * sig;
-}NODO;
+} NODO;
 
-typedef struct queue{
+typedef struct queue {
 	NODO * head;
 	NODO * tail;
 	int cuenta;
-}QUEUE;
+} QUEUE;
 
 void put(QUEUE * q, int v);
 QUEUE * initializeQueue(void);
@@ -25,67 +23,68 @@ int get(QUEUE * cola);
 void insert (int size, char ** array, QUEUE **q);
 void display (QUEUE *cola, int orden);
 
-int main (int argc, char **argv){
-	QUEUE * cola=NULL;
+int main(int argc, char **argv) {
+	QUEUE * cola = NULL;
 	cola = initializeQueue();
-	insert (argc, argv, &cola);
+	insert(argc, argv, &cola);
 	display(cola, HEAD);
 	display(cola, TAIL);
 	int x = get(cola);
-	printf("x=%d\n",x);
+	printf("x = %d\n", x);
 	display(cola, HEAD);
 	display(cola, TAIL);
 }
 
-QUEUE * initializeQueue(void){
+QUEUE * initializeQueue(void) {
 	QUEUE * Q = NULL;
-	Q = (QUEUE *)malloc(sizeof (QUEUE));
+	Q = (QUEUE *)malloc(sizeof(QUEUE));
 	Q->head = NULL;
-	Q->tail=NULL;
-	Q->cuenta=0;
+	Q->tail = NULL;
+	Q->cuenta = 0;
 	return Q;
 }
 
-void insert(int size, char **array, QUEUE ** Q){
+void insert(int size, char **array, QUEUE ** Q) {
 	int temp;
 	int i;
-	for( i=0; i<size; i++){
-		if(isdigit(*array[i])){
+	for(i = 0; i < size; i++) {
+		if(isdigit(*array[i])) {
 			temp = atoi(array[i]);
 			put(*Q, temp);
 		}
 	}
 } 
 
-void put(QUEUE * Q , int v){
+void put(QUEUE * Q, int v) {
 	NODO * p = nuevo_nodo();
 	p->valor = v;
-	if(Q->head == NULL){
+	if(Q->head == NULL) {
 		Q->head = p;
-	}else{
-		Q->tail -> sig = p;
+	} else {
+		Q->tail->sig = p;
 		p->ant = Q->tail;
 	}
 	Q->tail = p;
 	Q->cuenta++; 
 }
 
-NODO * nuevo_nodo (void){
-	NODO * ptr=NULL;
-	ptr=(NODO *)malloc(sizeof(NODO));
-		if(ptr==NULL){
-			return NULL;
-		}else{
-			ptr->valor=0;
-			ptr->ant=NULL;
-			ptr->sig = NULL;
+NODO * nuevo_nodo(void) {
+	NODO * ptr = NULL;
+	ptr = (NODO *)malloc(sizeof(NODO));
+
+	if(ptr == NULL) {
+		return NULL;
+	} else {
+		ptr->valor = 0;
+		ptr->ant = NULL;
+		ptr->sig = NULL;
 		return ptr;
-		}
+	}
 }
 
-int get (QUEUE * cola){
+int get(QUEUE * cola) {
 	int x = -1;
-	if(cola->cuenta>0){
+	if(cola->cuenta > 0) {
 		NODO * cabeza = cola->head;
 		cola->head = cabeza->sig;
 		cola->head->ant = NULL;
@@ -96,22 +95,22 @@ int get (QUEUE * cola){
 	return x;
 }
 
-void display (QUEUE *cola, int orden){
-	if(cola->cuenta==0){
+void display(QUEUE *cola, int orden) {
+	if(cola->cuenta == 0) {
 		printf("la cola se encuentra vacia\n");
-	}else{
-		NODO *ptr=NULL;
-		if(orden==HEAD){
+	} else {
+		NODO *ptr = NULL;
+		if(orden == HEAD) {
 			ptr = cola->head;
-			while(ptr!=NULL){
-				printf("%d:",ptr->valor);
-				ptr=ptr->sig;
+			while(ptr != NULL) {
+				printf("%d:", ptr->valor);
+				ptr = ptr->sig;
 			}
-		}else{
-			ptr=cola->tail;
-			while(ptr!=NULL){
-				printf("%d:",ptr->valor);
-				ptr=ptr->ant;
+		} else {
+			ptr = cola->tail;
+			while(ptr != NULL) {
+				printf("%d:", ptr->valor);
+				ptr = ptr->ant;
 			}
 		}
 		printf("\n");

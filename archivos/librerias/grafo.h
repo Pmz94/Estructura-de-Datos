@@ -6,20 +6,20 @@
 
 // function rand_interval from: http://stackoverflow.com/questions/2509679/how-to-generate-a-random-number-from-within-a-range
 
-typedef struct Edge{
+typedef struct Edge {
     int vertice;
     int weight;
     struct Edge *sige;
-}EDGE;
+} EDGE;
 
-typedef struct Vertice{
+typedef struct Vertice {
     int vertice;
     int visto;
     struct Edge *sige;
     struct Vertice *sigv;
-}VERTICE;
+} VERTICE;
 
-typedef struct grafo{
+typedef struct grafo {
     int num_vertices;
     struct Vertice *head;
 } GRAPH;
@@ -40,7 +40,7 @@ VERTICE * get_vertice(GRAPH *grafo, int vertice) {
         if(p->vertice == vertice) {
             return p;
         }
-        p = p -> sigv;
+        p = p->sigv;
     }
     return NULL;
 }
@@ -62,10 +62,10 @@ GRAPH * crear_grafo(int size) {
             for(i = 2; i <= size; i++) {
                 p->sigv = (VERTICE *)malloc(sizeof(VERTICE));
                 p = p->sigv;
-                p -> vertice = i;
-                p -> visto   = FALSE;
-                p -> sige    = NULL;
-                p -> sigv    = NULL;
+                p->vertice = i;
+                p->visto = FALSE;
+                p->sige = NULL;
+                p->sigv = NULL;
             }
         }
         return g;
@@ -75,28 +75,28 @@ GRAPH * crear_grafo(int size) {
 void insert_edge(GRAPH *grafo, int from, int to, int weight) {
     VERTICE *p = grafo->head;
     while(p != NULL ) {
-        if(p -> vertice == from ) {
+        if(p->vertice == from ) {
             if(p->sige == NULL) {
-                EDGE *edge = (EDGE *) malloc( sizeof( EDGE ) );
-                edge -> vertice = to;
-                edge -> weight  = weight;
-                edge -> sige    = NULL;
+                EDGE *edge = (EDGE *) malloc(sizeof(EDGE));
+                edge->vertice = to;
+                edge->weight = weight;
+                edge->sige = NULL;
                 p->sige = edge;
             } else {
-                EDGE *edge = p -> sige;
-                edge = get_edge(p -> sige, to);
+                EDGE *edge = p->sige;
+                edge = get_edge(p->sige, to);
                 if(edge != NULL) {
-                    edge -> weight = weight;
+                    edge->weight = weight;
                 } else {
-                    EDGE *new_edge = (EDGE *) malloc( sizeof( EDGE ) );
-                    new_edge -> vertice = to;
-                    new_edge -> weight  = weight;
-                    new_edge -> sige    = p->sige;
-                    p -> sige = new_edge;
+                    EDGE *new_edge = (EDGE *) malloc(sizeof(EDGE));
+                    new_edge->vertice = to;
+                    new_edge->weight = weight;
+                    new_edge->sige = p->sige;
+                    p->sige = new_edge;
                 }
             }
         }
-        p = p -> sigv;
+        p = p->sigv;
     }
 }
 
@@ -104,10 +104,10 @@ EDGE * existe_edge(GRAPH *g, int from, int to) {
     VERTICE *p = g->head;
     while(p != NULL) {
         if(p->vertice == from) {
-            EDGE *edge = get_edge( p->sige, to);
+            EDGE *edge = get_edge(p->sige, to);
             return edge;
         }
-        p = p -> sigv;
+        p = p->sigv;
     }
     return NULL;
 }

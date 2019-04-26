@@ -1,4 +1,4 @@
-/* Pedro Muñoz - 29/Noviembre/2015 */
+/* bfs.c - Pedro Muñoz - 29/Noviembre/2015 */
 #include <stdio.h>
 #include <stdlib.h>
 #include "queue.h"
@@ -35,7 +35,7 @@ void bfs(GRAPH *g, int start_vertice, int end_vertice) {
     int encontrado = FALSE;
     int vertice;
     QUEUE *Q = createQueue();
-    put (Q, start_vertice);
+    put(Q, start_vertice);
     do {
         vertice = get(Q);
         if(vertice == end_vertice) {
@@ -50,9 +50,9 @@ void bfs(GRAPH *g, int start_vertice, int end_vertice) {
     } while (( Q->size > 0) && (!encontrado));
 
     if(encontrado = TRUE) {
-        printf("Si existe camino entre %d y %d \n", start_vertice, end_vertice);
+        printf("Si existe camino entre %d y %d\n", start_vertice, end_vertice);
     } else {
-        printf("NO existe camino entre %d y %d \n", start_vertice, end_vertice);
+        printf("NO existe camino entre %d y %d\n", start_vertice, end_vertice);
     }
 }
 

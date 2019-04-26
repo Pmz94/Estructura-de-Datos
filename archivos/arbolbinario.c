@@ -1,14 +1,14 @@
-/* Pedro Muñoz - 26/Octubre/2015 */
+/* arbolbinario.c - Pedro Muñoz - 26/Octubre/2015 */
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef int Key;	//defininiendo tipo de dato llamado key que es entero
 typedef struct nodo Link;	// definiendo una estrcutura tipo apuntador link
-typedef struct nodo{
+typedef struct nodo {
 	Key id;
 	Link *izq;
 	Link *der;
-}Nodo;
+} Nodo;
 
 void carga_datos(Nodo **tree, int size, char **array);
 void insert(Nodo ** tree, Key valor);
@@ -45,7 +45,7 @@ void carga_datos(Nodo **tree, int size, char **array) {
 void insert(Nodo ** tree, Key valor) {
 	Nodo *tmp = NULL;
 	if(*tree == NULL) {
-		tmp = (Nodo *) malloc(sizeof(Nodo));
+		tmp = (Nodo *)malloc(sizeof(Nodo));
 		tmp->id = valor;
 		tmp->izq = NULL;
 		tmp->der = NULL;
