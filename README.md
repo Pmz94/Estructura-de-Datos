@@ -4,9 +4,9 @@ Estos codigos se corren en consola, necesitaras un compilador.
 
 ### Para Windows
 
-En este ejemplo usare el TCC (portable).
+En este ejemplo usare el [TCC](http://download.savannah.gnu.org/releases/tinycc/tcc-0.9.27-win32-bin.zip).
 
-Guarde los archivos dentro de la carpeta del compilador.
+Guarde los archivos .c dentro de la carpeta del compilador.
 
 Para correr los programas abra la consola y vaya a la carpeta del compilador:
 
@@ -14,7 +14,7 @@ Para correr los programas abra la consola y vaya a la carpeta del compilador:
 
 Luego corra los sig. comandos:
 
-```> tcc -o archivo archivo.c```
+```> tcc archivo.c -o archivo```
 
 ```> tcc archivo.c```
 
@@ -30,7 +30,7 @@ Para instalar todo esto escriba en la terminal:
 
 ```$ sudo apt install build-essential manpages-dev```
 
-Ya que tenga lo anterior, vaya a la carpeta donde tenga los archivos:
+Ya que tenga lo anterior, vaya a la carpeta donde tenga los archivos .c:
 
 ```$ cd /home/user/estructura-de-datos/```
 
