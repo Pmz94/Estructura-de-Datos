@@ -28,7 +28,7 @@ Para instalar todo esto escriba en la terminal:
 
 ```$ sudo apt update```
 
-```$ sudo apt install build-essential manpages-dev```
+```$ sudo apt install build-essential```
 
 Ya que tenga lo anterior, vaya a la carpeta donde tenga los archivos .c:
 
