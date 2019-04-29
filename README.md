@@ -22,9 +22,9 @@ Luego corra los sig. comandos:
 
 ### Para Linux
 
-En este ejemplo usare un compilador GNU C/C++ con otras herramientas relacionadas que ya vienen en Linux.
+En este ejemplo usare un compilador GNU C/C++ que viene en un paquete de Linux.
 
-Para instalar todo esto escriba en la terminal:
+Para instalar el paquete escriba en la terminal:
 
 ```$ sudo apt update```
 
