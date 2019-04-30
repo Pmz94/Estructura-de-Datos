@@ -8,23 +8,23 @@
 void carga_nombres(NODO **tree, int argc, char **argv);
 
 int main(int argc, char **argv) {
-  NODO *raiz = NULL;
-  carga_nombres(&raiz,argc, argv);
-  print_inorder(raiz);
-  exit(0);
+	NODO *raiz = NULL;
+	carga_nombres(&raiz, argc, argv);
+	print_inorder(raiz);
+	exit(0);
 }
 
-void carga_nombres(NODO **tree, int argc, char **argv){
+void carga_nombres(NODO **tree, int argc, char **argv) {
 	FILE *fp;
 	char nombre[MAXLEN];
 	char apellido[MAXLEN];
-	char nombre_completo[MAXLEN+MAXLEN];
+	char nombre_completo[MAXLEN + MAXLEN];
 	if(argc >= 2) {
 		char *filename = strdup(argv[1]);
 		fp = fopen(filename, "r");
 		if(fp != NULL) {
 			while(!feof(fp)) {	//feof(fp) == FALSE
-				if(fscanf(fp, "%s %s", nombre,apellido) != 2) {
+				if(fscanf(fp, "%s %s", nombre, apellido) != 2) {
 					break;
 				}
 				strcpy(nombre_completo, nombre);
